@@ -46,6 +46,7 @@
             this.QuitButt = new System.Windows.Forms.Label();
             this.errorBox = new System.Windows.Forms.Label();
             this.PassMatchError = new System.Windows.Forms.Label();
+            this.SignedUp = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -220,12 +221,25 @@
             this.PassMatchError.Visible = false;
             this.PassMatchError.Click += new System.EventHandler(this.PassMatchError_Click);
             // 
+            // SignedUp
+            // 
+            this.SignedUp.AutoSize = true;
+            this.SignedUp.Font = new System.Drawing.Font("Yu Gothic UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.SignedUp.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.SignedUp.Location = new System.Drawing.Point(170, 267);
+            this.SignedUp.Name = "SignedUp";
+            this.SignedUp.Size = new System.Drawing.Size(139, 21);
+            this.SignedUp.TabIndex = 22;
+            this.SignedUp.Text = "You are signed up!";
+            this.SignedUp.Visible = false;
+            // 
             // SignUp
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(476, 621);
+            this.Controls.Add(this.SignedUp);
             this.Controls.Add(this.PassMatchError);
             this.Controls.Add(this.errorBox);
             this.Controls.Add(this.QuitButt);
@@ -272,5 +286,6 @@
         private System.Windows.Forms.Label QuitButt;
         private System.Windows.Forms.Label errorBox;
         private System.Windows.Forms.Label PassMatchError;
+        private System.Windows.Forms.Label SignedUp;
     }
 }
