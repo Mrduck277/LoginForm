@@ -23,7 +23,7 @@ namespace LoginForm
 
             var conn = new SqlConnection(con);
             conn.Open();
-            string insertString = $"select count(*) from loginAndPassword where (UserName = '{thingToCheck}' and UserPassword = '{password}');";
+            string insertString = $"select count(*) from LoginAndSignup where (UserName = '{thingToCheck}' COLLATE SQL_Latin1_General_CP1_CS_AS and UserPassword = '{password}' );";
 
             /*SqlCommand CheckNumber = new SqlCommand(insertString, conn);
             CheckNumber.Parameters.AddWithValue(RowChecking, thingToCheck);
@@ -79,7 +79,7 @@ namespace LoginForm
 
         private void button1_Click(object sender, EventArgs e)
         {
-            bool isThere = CheckUserNameAndPass("UserName", UserInput.Text, PassInput.Text , "data source=DESKTOP-PKBTPSF\\SQLEXPRESS;initial catalog=LoginAndSignup;integrated security=True;Encrypt=False");
+            bool isThere = CheckUserNameAndPass("UserName", UserInput.Text, PassInput.Text , "data source=PC22\\SQLEXPRESS;initial catalog=LoginPage;integrated security=True;Encrypt=False");
 
             if (isThere)
             {

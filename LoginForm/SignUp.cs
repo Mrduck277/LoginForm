@@ -22,7 +22,7 @@ namespace LoginForm
 
             var conn = new SqlConnection(con);
             conn.Open();
-            string insertString = $"select count(*) from loginAndPassword where ([{RowChecking}] = '{thingToCheck}');";
+            string insertString = $"select count(*) from LoginAndSignup where ([{RowChecking}] = '{thingToCheck}');";
 
             SqlCommand CheckNumber = new SqlCommand(insertString, conn);
             CheckNumber.Parameters.AddWithValue(RowChecking, thingToCheck);
@@ -45,7 +45,7 @@ namespace LoginForm
         private static void AddToDatabase(string userName, string Password, string con)
         {
             var conn = new SqlConnection(con);
-            string insertString = $"insert into loginAndPassword (UserName, UserPassword) values ('{userName}', '{Password}');";
+            string insertString = $"insert into LoginAndSignup (UserName, UserPassword) values ('{userName}', '{Password}');";
             try
             {
                 conn.Open();
@@ -98,7 +98,7 @@ namespace LoginForm
         private void SignUpButt_Click(object sender, EventArgs e)
         {
 
-            bool isThere = CheckUserNameAndPass("UserName", UserInput2.Text, PassInput.Text, "data source=DESKTOP-PKBTPSF\\SQLEXPRESS;initial catalog=LoginAndSignup;integrated security=True;Encrypt=False");
+            bool isThere = CheckUserNameAndPass("UserName", UserInput2.Text, PassInput.Text, "data source=PC22\\SQLEXPRESS;initial catalog=LoginPage;integrated security=True;Encrypt=False");
             //AddToDatabase()
 
             if (isThere)
@@ -117,8 +117,9 @@ namespace LoginForm
             }
             else
             {
-                AddToDatabase(UserInput2.Text, PassInput.Text, "data source=DESKTOP-PKBTPSF\\SQLEXPRESS;initial catalog=LoginAndSignup;integrated security=True;Encrypt=False");
-                SignedUp.Visible = true;
+                AddToDatabase(UserInput2.Text, PassInput.Text, "data source=PC22\\SQLEXPRESS;initial catalog=LoginPage;integrated security=True;Encrypt=False");
+                new Form1().Show();
+                this.Hide();
             }
         }
     }
