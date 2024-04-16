@@ -18,6 +18,8 @@ namespace LoginForm
         {
             bool IfThere = false;
             //"data source=DESKTOP-PKBTPSF\\SQLEXPRESS;initial catalog=PhoneBookData;integrated security=True;Encrypt=False"
+            //just trying to see if this works
+
 
             var conn = new SqlConnection(con);
             conn.Open();
